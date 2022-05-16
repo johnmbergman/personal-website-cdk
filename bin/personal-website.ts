@@ -7,6 +7,7 @@ const app = new App();
 
 new DeploymentPipelineStack(app, `DeploymentPipelineStack`, {
     env: {
+        account: app.node.tryGetContext('account'),
         region: 'us-east-1',
     }
 })
