@@ -67,8 +67,9 @@ export class StaticWebsite extends Construct {
         }));
 
         // Create TLS certificate
+        const wildcardDomain = `*.${props.domain}`;
         const certificate = new DnsValidatedCertificate(this, 'WebsiteCertificate', {
-            domainName: fullDomain,
+            domainName: wildcardDomain,
             hostedZone: hostedZone,
             region: 'us-east-1', // CloudFront only checks this region for certificates.
         });
