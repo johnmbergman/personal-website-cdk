@@ -77,7 +77,7 @@ export class StaticWebsite extends Construct {
         const distribution = new Distribution(this, 'WebsiteDistribution', {
             certificate: certificate,
             defaultRootObject: "index.html",
-            domainNames: [fullDomain],
+            domainNames: [props.domain, fullDomain],
             minimumProtocolVersion: SecurityPolicyProtocol.TLS_V1_2_2021,
             defaultBehavior: {
                 origin: new S3Origin(bucket, {
