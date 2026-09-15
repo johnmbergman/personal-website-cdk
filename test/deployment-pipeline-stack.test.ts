@@ -1,9 +1,15 @@
 import {Template, Match} from 'aws-cdk-lib/assertions'
-import {Stack} from 'aws-cdk-lib';
+import {App, Stack} from 'aws-cdk-lib';
 import {DeploymentPipelineStack} from "../lib/deployment-pipeline-stack";
 
 describe('Deployment Pipeline', () => {
-    const deploymentPipelineStack = new DeploymentPipelineStack(new Stack(), 'DeploymentPipelineTestStack', {
+    const app = new App({
+        context: {
+            connectionArn: 'arn:aws:codestar-connections:us-east-1:account-id:connection/test-connection',
+        },
+    });
+
+    const deploymentPipelineStack = new DeploymentPipelineStack(new Stack(app, 'TestParent'), 'DeploymentPipelineTestStack', {
         env: {
             account: 'account-id',
             region: 'us-east-1',
