@@ -51,3 +51,8 @@ app requires a browser — then recorded as the `connectionArn` context value in
 To create it: **CodePipeline → Settings → Connections → Create connection → GitHub**,
 authorize the app, then copy the ARN. A connection left in `Pending` status has not
 been authorized and the pipeline will not be able to read the repository.
+
+Connections created since the CodeStar Connections → CodeConnections rename have
+`codeconnections` ARNs, while this version of the CDK grants the older
+`codestar-connections:UseConnection`. The pipeline stack grants the matching
+`codeconnections:UseConnection` explicitly, so either ARN prefix works.
