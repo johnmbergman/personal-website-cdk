@@ -1,0 +1,22 @@
+---
+layout: base.njk
+title: Writing
+permalink: /writing/
+---
+<section class="section">
+    <div class="section-heading">
+        <span class="eyebrow">06 / Writing</span>
+        <h2 class="section-title">Writing</h2>
+    </div>
+    <div class="writing-list">
+        {% for p in portfolio.posts %}
+        <a class="writing-item" href="/writing/{{ p.slug }}/">
+            <div>
+                <div class="writing-title">{{ p.title }}</div>
+                <div class="writing-excerpt">{{ p.excerpt }}</div>
+            </div>
+            <div class="writing-date">{{ p.date }}</div>
+        </a>
+        {% endfor %}
+    </div>
+</section>

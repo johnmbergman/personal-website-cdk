@@ -1,0 +1,21 @@
+---
+layout: base.njk
+pagination:
+  data: portfolio.posts
+  size: 1
+  alias: post
+permalink: "/writing/{{ post.slug }}/"
+eleventyComputed:
+  title: "{{ post.title }}"
+  description: "{{ post.excerpt }}"
+---
+<section class="section">
+    <a class="back-link" href="/writing/"><i class="fa-solid fa-arrow-left"></i> Back to writing</a>
+    <div class="post-date">{{ post.date }}</div>
+    <h1 class="post-title">{{ post.title }}</h1>
+    <div class="prose">
+        {% for para in (post.body or [post.excerpt]) %}
+        <p>{{ para }}</p>
+        {% endfor %}
+    </div>
+</section>

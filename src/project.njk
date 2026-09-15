@@ -1,0 +1,22 @@
+---
+layout: base.njk
+pagination:
+  data: portfolio.projects
+  size: 1
+  alias: project
+permalink: "/projects/{{ project.slug }}/"
+eleventyComputed:
+  title: "{{ project.title }}"
+  description: "{{ project.description }}"
+---
+<section class="section">
+    <a class="back-link" href="/projects/"><i class="fa-solid fa-arrow-left"></i> Back to projects</a>
+    <div class="section-heading">
+        <span class="eyebrow">Case Study</span>
+        <h2 class="section-title">{{ project.title }}</h2>
+    </div>
+    <p class="case-lede">{{ project.description }}</p>
+    <div class="case-tags">
+        {% for t in project.tags %}<span class="badge">{{ t }}</span>{% endfor %}
+    </div>
+</section>

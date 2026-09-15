@@ -21,7 +21,7 @@ export class StaticWebsiteStack extends Stack {
         new StaticWebsite(this, 'StaticWebsite', {
             domain: props.domain,
             subdomain: props.subdomain,
-            staticContent: Source.asset('./site-contents'),
+            staticContent: Source.asset('./_site'),
         });
     }
 }

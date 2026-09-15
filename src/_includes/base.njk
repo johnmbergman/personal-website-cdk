@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{% if title %}{{ title }} — {% endif %}{{ portfolio.profile.name }}</title>
+<meta name="description" content="{{ description or portfolio.profile.lede }}">
+<link rel="icon" href="/assets/img/favicon.ico">
+<link rel="stylesheet" href="/css/styles.css">
+<script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous" defer></script>
+</head>
+<body>
+
+{% set nav = [["/", "Home"], ["/about/", "About"], ["/projects/", "Projects"], ["/experience/", "Experience"], ["/skills/", "Skills"], ["/writing/", "Writing"], ["/contact/", "Contact"]] %}
+<nav class="nav">
+    <div class="nav-inner">
+        <a class="nav-brand" href="/">
+            <img src="/assets/img/profile.jpg" alt="">
+            <span>{{ portfolio.profile.name }}</span>
+        </a>
+        <div class="nav-links">
+            {% for item in nav %}
+            <a class="nav-link{% if (item[0] == "/" and page.url == "/") or (item[0] != "/" and page.url.startsWith(item[0])) %} active{% endif %}" href="{{ item[0] }}">{{ item[1] }}</a>
+            {% endfor %}
+        </div>
+    </div>
+</nav>
+
+<main>
+{{ content | safe }}
+</main>
+
+<footer class="footer">
+    <div class="footer-note">© {{ year }} {{ portfolio.profile.name }} — johnmbergman.com</div>
+    <div class="social-row">
+        {% for s in portfolio.profile.social %}
+        <a class="social" href="{{ s.href }}" target="_blank" rel="noreferrer" aria-label="{{ s.label }}"><i class="{{ s.icon }}"></i></a>
+        {% endfor %}
+    </div>
+</footer>
+
+</body>
+</html>

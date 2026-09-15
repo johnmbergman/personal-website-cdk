@@ -1,0 +1,15 @@
+{% for e in items %}
+<div class="timeline-item{% if e.last %} last{% endif %}">
+    <div class="timeline-date">{{ e.date }}</div>
+    <div class="timeline-body">
+        <div class="timeline-title">{{ e.title }}</div>
+        {% if e.org %}<div class="timeline-org">{{ e.org }}</div>{% endif %}
+        {% if e.description %}<p class="timeline-desc">{{ e.description }}</p>{% endif %}
+        {% if e.bullets %}
+        <ul class="timeline-bullets">
+            {% for b in e.bullets %}<li>{{ b }}</li>{% endfor %}
+        </ul>
+        {% endif %}
+    </div>
+</div>
+{% endfor %}
