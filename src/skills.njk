@@ -1,0 +1,26 @@
+---
+layout: base.njk
+title: Skills
+permalink: /skills/
+---
+<section class="section">
+    <div class="section-heading">
+        <span class="eyebrow">05 / Skills</span>
+        <h2 class="section-title"><i class="fa-solid fa-screwdriver-wrench"></i>Skills</h2>
+    </div>
+    <p class="skills-hint">Click a skill to see the projects that used it.</p>
+    <div class="skills-grid">
+        {% for group, list in portfolio.skills %}
+        <div>
+            <div class="skill-group-title">{{ group }}</div>
+            <div class="skill-list">
+                {% for s in list %}
+                {% set slug = s | skillSlug %}
+                {% if slug %}<a class="badge" href="/projects/skill-{{ slug }}/">{{ s }}</a>
+                {% else %}<span class="badge">{{ s }}</span>{% endif %}
+                {% endfor %}
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</section>

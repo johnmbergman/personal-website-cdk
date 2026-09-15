@@ -1,0 +1,22 @@
+---
+layout: base.njk
+pagination:
+  data: skillFilters
+  size: 1
+  alias: filter
+permalink: "/projects/skill-{{ filter.slug }}/"
+eleventyComputed:
+  title: "Projects using {{ filter.skill }}"
+---
+<section class="section">
+    <div class="section-heading">
+        <span class="eyebrow">02 / Selected Work</span>
+        <h2 class="section-title">Projects</h2>
+    </div>
+    <div class="filter-bar">
+        <span>Filtered by</span>
+        <a class="badge badge-accent" href="/projects/">{{ filter.skill }} ✕</a>
+    </div>
+    {% set items = filter.projects %}
+    {% include "project-grid.njk" %}
+</section>

@@ -9,3 +9,6 @@ cdk.out
 
 # JetBrains tools
 .idea
+
+# Eleventy build output
+_site

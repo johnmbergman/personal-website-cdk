@@ -1,0 +1,19 @@
+---
+layout: base.njk
+permalink: /
+---
+<section class="hero">
+    <span class="eyebrow">{{ portfolio.profile.meta }}</span>
+    <h1 class="hero-title">John <span>Bergman</span></h1>
+    <div class="hero-role">{{ portfolio.profile.role }}</div>
+    <p class="hero-lede">{{ portfolio.profile.lede }}</p>
+    <div class="hero-actions">
+        <a class="btn btn-primary" href="/contact/">Get in touch <i class="fa-solid fa-arrow-right"></i></a>
+        <a class="btn btn-secondary" href="/projects/"><i class="fa-solid fa-folder-open"></i> View projects</a>
+        <div class="social-row">
+            {% for s in portfolio.profile.social %}
+            <a class="social" href="{{ s.href }}" target="_blank" rel="noreferrer" aria-label="{{ s.label }}"><i class="{{ s.icon }}"></i></a>
+            {% endfor %}
+        </div>
+    </div>
+</section>

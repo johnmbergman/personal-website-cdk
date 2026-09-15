@@ -1,0 +1,20 @@
+---
+layout: base.njk
+title: Contact
+permalink: /contact/
+---
+<section class="section">
+    <div class="section-heading">
+        <span class="eyebrow">07 / Contact</span>
+        <h2 class="section-title">Get in touch</h2>
+    </div>
+    <p class="contact-lede">The fastest way to reach me is email — or find me on LinkedIn and GitHub.</p>
+    <div class="contact-actions">
+        <a class="btn btn-primary" href="mailto:{{ portfolio.profile.email }}"><i class="fa-solid fa-envelope"></i> {{ portfolio.profile.email }}</a>
+        <div class="social-row">
+            {% for s in portfolio.profile.social %}
+            <a class="social" href="{{ s.href }}" target="_blank" rel="noreferrer" aria-label="{{ s.label }}"><i class="{{ s.icon }}"></i></a>
+            {% endfor %}
+        </div>
+    </div>
+</section>

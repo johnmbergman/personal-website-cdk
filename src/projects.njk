@@ -1,0 +1,12 @@
+---
+layout: base.njk
+title: Projects
+eyebrow: "02 / Selected Work"
+heading: Projects
+permalink: /projects/
+---
+<section class="section">
+    {% include "section-heading.njk" %}
+    {% set items = portfolio.projects %}
+    {% include "project-grid.njk" %}
+</section>

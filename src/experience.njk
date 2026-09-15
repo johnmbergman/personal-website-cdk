@@ -1,0 +1,21 @@
+---
+layout: base.njk
+title: Experience
+permalink: /experience/
+---
+<section class="section">
+    <div class="section-heading">
+        <span class="eyebrow">03 / Experience</span>
+        <h2 class="section-title"><i class="fa-solid fa-house-laptop"></i>Experience</h2>
+    </div>
+    {% set items = portfolio.experience %}
+    {% include "timeline.njk" %}
+</section>
+<section class="section">
+    <div class="section-heading">
+        <span class="eyebrow">04 / Education</span>
+        <h2 class="section-title"><i class="fa-solid fa-graduation-cap"></i>Education</h2>
+    </div>
+    {% set items = portfolio.education %}
+    {% include "timeline.njk" %}
+</section>

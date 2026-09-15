@@ -2,6 +2,7 @@ import {Environment, SecretValue, Stack, StackProps} from "aws-cdk-lib";
 import {IConstruct} from "constructs";
 import {CodePipeline, CodePipelineSource, ShellStep} from "aws-cdk-lib/pipelines";
 import {GitHubTrigger} from "aws-cdk-lib/aws-codepipeline-actions";
+import {LinuxBuildImage} from "aws-cdk-lib/aws-codebuild";
 import {DeploymentStage} from "./deployment-stage";
 
 /**
@@ -21,6 +22,13 @@ export class DeploymentPipelineStack extends Stack {
 
         const pipeline = new CodePipeline(this, 'CodePipelineResource', {
             pipelineName: 'PersonalWebsite',
+
+            // The default image (standard:5.0) tops out at Node 14; Eleventy 3 needs Node 18+.
+            codeBuildDefaults: {
+                buildEnvironment: {
+                    buildImage: LinuxBuildImage.fromCodeBuildImageId('aws/codebuild/standard:7.0'),
+                },
+            },
             synth: new ShellStep('some-id', {
                 input: CodePipelineSource.gitHub('johnmbergman/personal-website-cdk', 'main', {
                     authentication: SecretValue.secretsManager('github-oauth-token'),

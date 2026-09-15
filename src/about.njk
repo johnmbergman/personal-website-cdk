@@ -1,0 +1,14 @@
+---
+layout: base.njk
+title: About
+eyebrow: "01 / About"
+heading: About
+permalink: /about/
+---
+<section class="section">
+    {% include "section-heading.njk" %}
+    <div class="about-grid">
+        <img src="/assets/img/profile.jpg" alt="{{ portfolio.profile.name }}">
+        <div><p>{{ portfolio.profile.about }}</p></div>
+    </div>
+</section>
