@@ -3,6 +3,7 @@
   "context": {
     "domain": "johnmbergman.com",
     "subdomain": "www",
-    "@aws-cdk/core:stackRelativeExports": "true"
+    "@aws-cdk/core:stackRelativeExports": "true",
+    "connectionArn": "arn:aws:codeconnections:us-east-1:014967381484:connection/0ee07f31-f7df-485d-a9aa-843beddb36ad"
   }
 }

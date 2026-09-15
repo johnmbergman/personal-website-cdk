@@ -2,6 +2,7 @@ import {Environment, Stack, StackProps} from "aws-cdk-lib";
 import {IConstruct} from "constructs";
 import {CodePipeline, CodePipelineSource, ShellStep} from "aws-cdk-lib/pipelines";
 import {LinuxBuildImage} from "aws-cdk-lib/aws-codebuild";
+import {Effect, PolicyStatement, Role} from "aws-cdk-lib/aws-iam";
 import {DeploymentStage} from "./deployment-stage";
 
 /**
@@ -60,6 +61,24 @@ export class DeploymentPipelineStack extends Stack {
             domain: this.node.tryGetContext('domain'),
             subdomain: this.node.tryGetContext('subdomain'),
         }));
+
+        /**
+         * CodeStar Connections was renamed to CodeConnections, and connections created since
+         * the rename have `codeconnections` ARNs. This version of the CDK predates it and
+         * grants `codestar-connections:UseConnection`, leaving the action and the resource
+         * under different service prefixes. Grant the matching action explicitly so the
+         * source stage is authorized regardless of how IAM treats the two prefixes.
+         */
+        pipeline.buildPipeline();
+        pipeline.pipeline.node.findAll()
+            .filter((c): c is Role => c instanceof Role
+                && c.node.id === 'CodePipelineActionRole'
+                && c.node.path.includes('/Source/'))
+            .forEach((role) => role.addToPolicy(new PolicyStatement({
+                effect: Effect.ALLOW,
+                actions: ['codeconnections:UseConnection'],
+                resources: [connectionArn],
+            })));
     }
 
 }
