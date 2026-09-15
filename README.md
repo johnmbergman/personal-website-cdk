@@ -29,3 +29,25 @@ npx cdk synth        # synthesize the CloudFormation templates
 
 Pushing to `main` triggers the CodePipeline defined in `lib/deployment-pipeline-stack.ts`,
 which runs `npm run build` and deploys `_site/` to the website bucket.
+
+## Pipeline source
+
+The pipeline reads GitHub through a [CodeStar connection](https://docs.aws.amazon.com/dtconsole/latest/userguide/connections.html)
+rather than a personal access token, so there is no credential to rotate and no
+secret to pay for.
+
+The connection must be created once by hand — authorizing the AWS Connector GitHub
+app requires a browser — then recorded as the `connectionArn` context value in
+`cdk.json`:
+
+```json
+{
+  "context": {
+    "connectionArn": "arn:aws:codestar-connections:us-east-1:<account>:connection/<uuid>"
+  }
+}
+```
+
+To create it: **CodePipeline → Settings → Connections → Create connection → GitHub**,
+authorize the app, then copy the ARN. A connection left in `Pending` status has not
+been authorized and the pipeline will not be able to read the repository.
