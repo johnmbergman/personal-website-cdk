@@ -5,6 +5,9 @@ import {
     AllowedMethods,
     Distribution,
     OriginAccessIdentity,
+    Function as CloudFrontFunction,
+    FunctionCode,
+    FunctionEventType,
     SecurityPolicyProtocol,
     ViewerProtocolPolicy
 } from "aws-cdk-lib/aws-cloudfront";
@@ -74,6 +77,28 @@ export class StaticWebsite extends Construct {
             region: 'us-east-1', // CloudFront only checks this region for certificates.
         });
 
+        /**
+         * The S3 origin is a REST endpoint (it is fronted by an OAI), so S3 does not resolve
+         * directory indexes, and `defaultRootObject` only applies to `/`. Without this, every
+         * page below the root — `/projects/`, `/writing/<slug>/` — would 404. Rewrite those
+         * requests to the `index.html` the static site generator wrote there.
+         */
+        const directoryIndexFunction = new CloudFrontFunction(this, 'DirectoryIndexFunction', {
+            comment: 'Rewrites directory requests to their index.html object',
+            code: FunctionCode.fromInline(`
+function handler(event) {
+    var request = event.request;
+    var uri = request.uri;
+    if (uri.charAt(uri.length - 1) === '/') {
+        request.uri = uri + 'index.html';
+    } else if (uri.lastIndexOf('.') < uri.lastIndexOf('/')) {
+        request.uri = uri + '/index.html';
+    }
+    return request;
+}
+            `),
+        });
+
         // Create CloudFront distribution
         const distribution = new Distribution(this, 'WebsiteDistribution', {
             certificate: certificate,
@@ -87,6 +112,10 @@ export class StaticWebsite extends Construct {
                 compress: true,
                 allowedMethods: AllowedMethods.ALLOW_GET_HEAD_OPTIONS,
                 viewerProtocolPolicy: ViewerProtocolPolicy.REDIRECT_TO_HTTPS,
+                functionAssociations: [{
+                    function: directoryIndexFunction,
+                    eventType: FunctionEventType.VIEWER_REQUEST,
+                }],
             }
         });
 
