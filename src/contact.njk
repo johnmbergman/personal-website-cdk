@@ -10,7 +10,7 @@ permalink: /contact/
     </div>
     <p class="contact-lede">The fastest way to reach me is email — or find me on LinkedIn and GitHub.</p>
     <div class="contact-actions">
-        <a class="btn btn-primary" id="email-link" data-enc="{{ portfolio.profile.emailEncoded }}"><i class="fa-solid fa-envelope"></i> <span id="email-text">Email me</span></a>
+        <a class="btn btn-primary" id="email-link" data-enc="{{ portfolio.profile.emailEncoded }}"><i class="fa-solid fa-envelope"></i> Send me an email</a>
         <div class="social-row">
             {% for s in portfolio.profile.social %}
             <a class="social" href="{{ s.href }}" target="_blank" rel="noreferrer" aria-label="{{ s.label }}"><i class="{{ s.icon }}"></i></a>
@@ -27,8 +27,6 @@ permalink: /contact/
     // scrapers to harvest; the browser decodes it and builds the mailto link.
     (function () {
         var link = document.getElementById('email-link');
-        var address = atob(link.dataset.enc);
-        link.href = 'mailto:' + address;
-        document.getElementById('email-text').textContent = address;
+        link.href = 'mailto:' + atob(link.dataset.enc);
     })();
 </script>
