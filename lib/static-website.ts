@@ -69,10 +69,16 @@ export class StaticWebsite extends Construct {
             ],
         }));
 
-        // Create TLS certificate
-        const wildcardDomain = `*.${props.domain}`;
+        /**
+         * Create TLS certificate.
+         *
+         * A wildcard matches exactly one label, so `*.example.com` covers `www.example.com`
+         * but NOT the bare `example.com`. The distribution serves both, so the apex is the
+         * certificate's domain name and the wildcard is added as an alternative name.
+         */
         const certificate = new DnsValidatedCertificate(this, 'WebsiteCertificate', {
-            domainName: wildcardDomain,
+            domainName: props.domain,
+            subjectAlternativeNames: [`*.${props.domain}`],
             hostedZone: hostedZone,
             region: 'us-east-1', // CloudFront only checks this region for certificates.
         });
