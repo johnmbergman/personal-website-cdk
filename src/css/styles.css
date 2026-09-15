@@ -591,6 +591,13 @@ a.badge:hover {
     flex-wrap: wrap;
 }
 
+.contact-fallback {
+    font-family: var(--font-mono);
+    font-size: var(--text-sm);
+    color: var(--text-secondary);
+    margin-top: var(--space-5);
+}
+
 /* ---- footer ---- */
 .footer {
     border-top: 1px solid var(--border-subtle);
