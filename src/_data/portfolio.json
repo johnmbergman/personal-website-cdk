@@ -3,44 +3,192 @@
     "name": "John Bergman",
     "role": "Software Engineer",
     "meta": "Seattle, WA · 15+ years experience",
-    "email": "johnmbergman@gmail.com",
+    "emailEncoded": "am9obm1iZXJnbWFuQGdtYWlsLmNvbQ==",
+    "emailHuman": "johnmbergman [at] gmail [dot] com",
     "lede": "Staff-level software engineer with 15+ years building content-ingestion and media supply-chain platforms at scale. Unifying pipelines, founding partner APIs, and leading cross-org delivery.",
     "about": "Staff software engineer with 15+ years of overall software engineering experience, specializing in content ingestion and media supply-chain platforms at scale. At Amazon Prime Video, unified a bifurcated content-ingestion pipeline to carry 100% of net-new titles, founded an API-first partner platform adopted as the standard across ~12 engineering teams, and owned partner-facing catalog storage for 4MM video titles.",
     "social": [
-      { "label": "LinkedIn", "icon": "fab fa-linkedin-in", "href": "https://www.linkedin.com/in/johnmbergman/" },
-      { "label": "GitHub", "icon": "fab fa-github", "href": "https://github.com/johnmbergman/" }
+      {
+        "label": "LinkedIn",
+        "icon": "fab fa-linkedin-in",
+        "href": "https://www.linkedin.com/in/johnmbergman/"
+      },
+      {
+        "label": "GitHub",
+        "icon": "fab fa-github",
+        "href": "https://github.com/johnmbergman/"
+      }
     ]
   },
   "projects": [
-    { "slug": "partner-api-platform", "title": "Partner API Platform", "description": "Founded and architected an API-first partner platform adopted as the org standard across ~12 teams — grown from 5 to 29+ integrations at ~200 TPS peak with >99.9% availability.", "tags": ["Java", "AWS", "MCP", "API Design"] },
-    { "slug": "catalog-unification", "title": "Catalog Unification", "description": "Delivered partner-facing catalog storage for 4MM video titles and unified a bifurcated ingestion architecture onto a single path via a 12-engineer cross-org tiger team.", "tags": ["DynamoDB", "Step Functions", "Migration"] },
-    { "slug": "ai-dev-agents-and-mcp", "title": "AI Dev Agents & MCP", "description": "Drove AI-assisted development org-wide — context-aware agents adopted by 80+ engineers, plus Model Context Protocol support on the partner API framework.", "tags": ["MCP", "LLM Tooling", "Agents"] },
-    { "slug": "on-time-delivery-program", "title": "On-Time Delivery Program", "description": "Owned the engineering share of an org-wide on-time content-delivery initiative — instrumented telemetry and fixed root causes, contributing ~350 bps of improvement toward an 88%→95% goal.", "tags": ["Observability", "Process"] },
-    { "slug": "payment-workflow-overhaul", "title": "Payment Workflow Overhaul", "description": "Reduced payment-workflow execution time by 90% and system cost by $200k/yr by minimizing API calls and tuning database throughput.", "tags": ["AWS", "Cost Optimization"] },
-    { "slug": "cross-org-data-integrity-fix", "title": "Cross-Org Data Integrity Fix", "description": "Resolved a catalog data-integrity risk affecting 265,000 titles with legal/compliance exposure — led a 3-org workshop that unblocked 6 stalled strategic projects.", "tags": ["Leadership", "Data Quality"] }
+    {
+      "slug": "partner-api-platform",
+      "title": "Partner API Platform",
+      "description": "Founded and architected an API-first partner platform adopted as the org standard across ~12 teams — grown from 5 to 29+ integrations at ~200 TPS peak with >99.9% availability.",
+      "tags": [
+        "Java",
+        "AWS",
+        "MCP",
+        "API Design"
+      ]
+    },
+    {
+      "slug": "catalog-unification",
+      "title": "Catalog Unification",
+      "description": "Delivered partner-facing catalog storage for 4MM video titles and unified a bifurcated ingestion architecture onto a single path via a 12-engineer cross-org tiger team.",
+      "tags": [
+        "DynamoDB",
+        "Step Functions",
+        "Migration"
+      ]
+    },
+    {
+      "slug": "ai-dev-agents-and-mcp",
+      "title": "AI Dev Agents & MCP",
+      "description": "Drove AI-assisted development org-wide — context-aware agents adopted by 80+ engineers, plus Model Context Protocol support on the partner API framework.",
+      "tags": [
+        "MCP",
+        "LLM Tooling",
+        "Agents"
+      ]
+    },
+    {
+      "slug": "on-time-delivery-program",
+      "title": "On-Time Delivery Program",
+      "description": "Owned the engineering share of an org-wide on-time content-delivery initiative — instrumented telemetry and fixed root causes, contributing ~350 bps of improvement toward an 88%→95% goal.",
+      "tags": [
+        "Observability",
+        "Process"
+      ]
+    },
+    {
+      "slug": "payment-workflow-overhaul",
+      "title": "Payment Workflow Overhaul",
+      "description": "Reduced payment-workflow execution time by 90% and system cost by $200k/yr by minimizing API calls and tuning database throughput.",
+      "tags": [
+        "AWS",
+        "Cost Optimization"
+      ]
+    },
+    {
+      "slug": "cross-org-data-integrity-fix",
+      "title": "Cross-Org Data Integrity Fix",
+      "description": "Resolved a catalog data-integrity risk affecting 265,000 titles with legal/compliance exposure — led a 3-org workshop that unblocked 6 stalled strategic projects.",
+      "tags": [
+        "Leadership",
+        "Data Quality"
+      ]
+    }
   ],
   "experience": [
-    { "date": "June 2020 – Present", "title": "Sr. Software Development Engineer", "org": "Amazon · Prime Video", "description": "Tech lead for tools serving content creators, studios, and post houses — web portals, delivery/upload tooling, and partner-facing APIs.", "bullets": ["Founded an API-first partner platform adopted org-wide across ~12 teams", "Authored a 3-year, multi-org API strategy; represented the company on the MovieLabs MDDF standards subcommittee", "Built context-aware AI dev agents adopted by 80+ engineers; added MCP support to the platform"] },
-    { "date": "Apr 2018 – June 2020", "title": "Software Development Engineer", "org": "Amazon · Prime Video", "description": "Built systems measuring content performance and calculating partner royalties and payments.", "bullets": ["Drove the cross-team launch of IMDb Freedive, vending entitlements at 1,300+ TPS", "Cut payment-workflow execution time 90%, saving $200k/yr", "Mentored 4 engineers through promotion and 2 interns to return offers"] },
-    { "date": "Apr 2016 – Apr 2018", "title": "Software Development Engineer", "org": "Amazon · Flex", "description": "Backend engineer for distributed systems supporting the Amazon Flex apps and driver engagement.", "bullets": ["Built a workflow-engine app automating 1MM+ monthly partner communications", "Developed a mobile SDK vending 10MM+ resource updates annually"] },
-    { "date": "June 2011 – Jan 2016", "title": "Software Engineer", "org": "NuDatum Software", "description": "Full-stack owner of an enterprise safety-auditing web application.", "bullets": ["Deployed at 1,200+ company sites worldwide in 9 languages", "Cut onboarding from 2 days to 15 minutes via an O(n²) → O(n) migration rewrite"], "last": true }
+    {
+      "date": "June 2020 – Present",
+      "title": "Sr. Software Development Engineer",
+      "org": "Amazon · Prime Video",
+      "description": "Tech lead for tools serving content creators, studios, and post houses — web portals, delivery/upload tooling, and partner-facing APIs.",
+      "bullets": [
+        "Founded an API-first partner platform adopted org-wide across ~12 teams",
+        "Authored a 3-year, multi-org API strategy; represented the company on the MovieLabs MDDF standards subcommittee",
+        "Built context-aware AI dev agents adopted by 80+ engineers; added MCP support to the platform"
+      ]
+    },
+    {
+      "date": "Apr 2018 – June 2020",
+      "title": "Software Development Engineer",
+      "org": "Amazon · Prime Video",
+      "description": "Built systems measuring content performance and calculating partner royalties and payments.",
+      "bullets": [
+        "Drove the cross-team launch of IMDb Freedive, vending entitlements at 1,300+ TPS",
+        "Cut payment-workflow execution time 90%, saving $200k/yr",
+        "Mentored 4 engineers through promotion and 2 interns to return offers"
+      ]
+    },
+    {
+      "date": "Apr 2016 – Apr 2018",
+      "title": "Software Development Engineer",
+      "org": "Amazon · Flex",
+      "description": "Backend engineer for distributed systems supporting the Amazon Flex apps and driver engagement.",
+      "bullets": [
+        "Built a workflow-engine app automating 1MM+ monthly partner communications",
+        "Developed a mobile SDK vending 10MM+ resource updates annually"
+      ]
+    },
+    {
+      "date": "June 2011 – Jan 2016",
+      "title": "Software Engineer",
+      "org": "NuDatum Software",
+      "description": "Full-stack owner of an enterprise safety-auditing web application.",
+      "bullets": [
+        "Deployed at 1,200+ company sites worldwide in 9 languages",
+        "Cut onboarding from 2 days to 15 minutes via an O(n²) → O(n) migration rewrite"
+      ],
+      "last": true
+    }
   ],
   "education": [
-    { "date": "2015", "title": "B.S., Computer Science (with honors)", "org": "Florida State University", "last": true }
+    {
+      "date": "2015",
+      "title": "B.S., Computer Science (with honors)",
+      "org": "Florida State University",
+      "last": true
+    }
   ],
   "skills": {
-    "Languages": ["Java", "Kotlin", "TypeScript", "Python", "Swift", "C#"],
-    "Cloud / Infra": ["AWS Lambda", "API Gateway", "CloudFront", "DynamoDB", "S3", "SQS/SNS", "Step Functions", "CDK"],
-    "Frameworks": ["Spring", "Guice", "Guava", "JUnit", "React", "SwiftUI"],
-    "AI / Agents": ["Multi-agent orchestration", "MCP", "LLM tooling & eval"]
+    "Languages": [
+      "Java",
+      "Kotlin",
+      "TypeScript",
+      "Python",
+      "Swift",
+      "C#"
+    ],
+    "Cloud / Infra": [
+      "AWS Lambda",
+      "API Gateway",
+      "CloudFront",
+      "DynamoDB",
+      "S3",
+      "SQS/SNS",
+      "Step Functions",
+      "CDK"
+    ],
+    "Frameworks": [
+      "Spring",
+      "Guice",
+      "Guava",
+      "JUnit",
+      "React",
+      "SwiftUI"
+    ],
+    "AI / Agents": [
+      "Multi-agent orchestration",
+      "MCP",
+      "LLM tooling & eval"
+    ]
   },
   "posts": [
-    { "slug": "unifying-a-bifurcated-ingestion-pipeline", "title": "Unifying a bifurcated ingestion pipeline", "date": "Mar 2026", "excerpt": "Notes on moving a decade of tech debt onto one path without stopping the line.", "body": [
-      "For years, content flowed into our catalog through two parallel ingestion paths — one legacy, one modern — each maintained by a different generation of the team. Every new feature meant building it twice, or worse, building it once and quietly letting the other path drift.",
-      "The unification wasn’t a rewrite. It was a 12-engineer cross-org tiger team methodically routing traffic, title by title, onto the single path while the legacy system kept serving in parallel. We instrumented both paths so a regression on either was visible within minutes, not days.",
-      "Nine months in, the unified path carries 100% of net-new partner content. The legacy path is still there, mid-decommission, but every title added since has only ever touched one codebase — and that’s the part that actually saves the years of tech debt from coming back."
-    ] },
-    { "slug": "speaking-at-devseccon-2023", "title": "Speaking at DevSecCon 2023", "date": "Nov 2023", "excerpt": "What I covered opening the company’s internal security conference." },
-    { "slug": "giving-ai-agents-real-domain-context", "title": "Giving AI agents real domain context", "date": "Jan 2026", "excerpt": "How preloading agents with microservice knowledge changed adoption." }
+    {
+      "slug": "unifying-a-bifurcated-ingestion-pipeline",
+      "title": "Unifying a bifurcated ingestion pipeline",
+      "date": "Mar 2026",
+      "excerpt": "Notes on moving a decade of tech debt onto one path without stopping the line.",
+      "body": [
+        "For years, content flowed into our catalog through two parallel ingestion paths — one legacy, one modern — each maintained by a different generation of the team. Every new feature meant building it twice, or worse, building it once and quietly letting the other path drift.",
+        "The unification wasn’t a rewrite. It was a 12-engineer cross-org tiger team methodically routing traffic, title by title, onto the single path while the legacy system kept serving in parallel. We instrumented both paths so a regression on either was visible within minutes, not days.",
+        "Nine months in, the unified path carries 100% of net-new partner content. The legacy path is still there, mid-decommission, but every title added since has only ever touched one codebase — and that’s the part that actually saves the years of tech debt from coming back."
+      ]
+    },
+    {
+      "slug": "speaking-at-devseccon-2023",
+      "title": "Speaking at DevSecCon 2023",
+      "date": "Nov 2023",
+      "excerpt": "What I covered opening the company’s internal security conference."
+    },
+    {
+      "slug": "giving-ai-agents-real-domain-context",
+      "title": "Giving AI agents real domain context",
+      "date": "Jan 2026",
+      "excerpt": "How preloading agents with microservice knowledge changed adoption."
+    }
   ]
 }
