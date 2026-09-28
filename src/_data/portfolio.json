@@ -1,11 +1,10 @@
 {
   "profile": {
     "name": "John Bergman",
-    "role": "Software Engineer",
-    "meta": "Seattle, WA · 15+ years experience",
+    "role": "Software Engineer · Seattle, WA · 15+ years experience",
     "emailEncoded": "am9obm1iZXJnbWFuQGdtYWlsLmNvbQ==",
     "emailHuman": "johnmbergman [at] gmail [dot] com",
-    "lede": "Staff-level software engineer with 15+ years building content-ingestion and media supply-chain platforms at scale. Unifying pipelines, founding partner APIs, and leading cross-org delivery.",
+    "lede": "Hello! I am a software engineer with 15+ years of experience building software applications. Much of my experience is building content-ingestion and media supply-chain platforms at scale.",
     "about": "Staff software engineer with 15+ years of overall software engineering experience, specializing in content ingestion and media supply-chain platforms at scale. At Amazon Prime Video, unified a bifurcated content-ingestion pipeline to carry 100% of net-new titles, founded an API-first partner platform adopted as the standard across ~12 engineering teams, and owned partner-facing catalog storage for 4MM video titles.",
     "social": [
       {
