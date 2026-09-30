@@ -294,14 +294,12 @@ body {
 }
 
 /* ---- about ---- */
-.about-grid {
-    display: grid;
-    grid-template-columns: 160px 1fr;
+.about {
     gap: 40px;
     align-items: start;
 }
 
-.about-grid img {
+.about img {
     width: 160px;
     height: 160px;
     border-radius: 50%;
@@ -309,7 +307,7 @@ body {
     border: 1px solid var(--border-default);
 }
 
-.about-grid p {
+.about p {
     color: var(--text-secondary);
     font-size: var(--text-md);
     line-height: var(--leading-relaxed);
@@ -424,7 +422,7 @@ a.badge:hover {
 }
 
 .timeline-date {
-    flex: 0 0 130px;
+    flex: 0 0 180px;
     font-family: var(--font-mono);
     font-size: 12px;
     color: var(--accent-6);
