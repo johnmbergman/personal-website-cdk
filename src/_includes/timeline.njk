@@ -1,5 +1,5 @@
 {% for e in items %}
-<div class="timeline-item{% if e.last %} last{% endif %}">
+<div class="timeline-item{% if loop.last %} last{% endif %}">
     <div class="timeline-date">{{ e.date }}</div>
     <div class="timeline-body">
         <div class="timeline-title">{{ e.title }}</div>

@@ -2,13 +2,48 @@
 layout: base.njk
 title: Experience
 permalink: /experience/
+experience:
+  - date: "June 2020 – Present"
+    title: "Sr. Software Development Engineer"
+    org: "Amazon · Prime Video"
+    description: "Tech lead for tools serving content creators, studios, and post houses — web portals, delivery/upload tooling, and partner-facing APIs."
+    bullets:
+      - "Founded an API-first partner platform adopted org-wide across ~12 teams"
+      - "Authored a 3-year, multi-org API strategy; represented the company on the MovieLabs MDDF standards subcommittee"
+      - "Built context-aware AI dev agents adopted by 80+ engineers; added MCP support to the platform"
+  - date: "Apr 2018 – June 2020"
+    title: "Software Development Engineer"
+    org: "Amazon · Prime Video"
+    description: "Built systems measuring content performance and calculating partner royalties and payments."
+    bullets:
+      - "Drove the cross-team launch of IMDb Freedive, vending entitlements at 1,300+ TPS"
+      - "Cut payment-workflow execution time 90%, saving $200k/yr"
+      - "Mentored 4 engineers through promotion and 2 interns to return offers"
+  - date: "Apr 2016 – Apr 2018"
+    title: "Software Development Engineer"
+    org: "Amazon · Flex"
+    description: "Backend engineer for distributed systems supporting the Amazon Flex apps and driver engagement."
+    bullets:
+      - "Built a workflow-engine app automating 1MM+ monthly partner communications"
+      - "Developed a mobile SDK vending 10MM+ resource updates annually"
+  - date: "June 2011 – Jan 2016"
+    title: "Software Engineer"
+    org: "NuDatum Software"
+    description: "Full-stack owner of an enterprise safety-auditing web application."
+    bullets:
+      - "Deployed at 1,200+ company sites worldwide in 9 languages"
+      - "Cut onboarding from 2 days to 15 minutes via an O(n²) → O(n) migration rewrite"
+education:
+  - date: "2015"
+    title: "B.S., Computer Science (with honors)"
+    org: "Florida State University"
 ---
 <section class="section">
     <div class="section-heading">
         <span class="eyebrow">03 / Experience</span>
         <h2 class="section-title"><i class="fa-solid fa-house-laptop"></i>Experience</h2>
     </div>
-    {% set items = portfolio.experience %}
+    {% set items = experience %}
     {% include "timeline.njk" %}
 </section>
 <section class="section">
@@ -16,6 +51,6 @@ permalink: /experience/
         <span class="eyebrow">04 / Education</span>
         <h2 class="section-title"><i class="fa-solid fa-graduation-cap"></i>Education</h2>
     </div>
-    {% set items = portfolio.education %}
+    {% set items = education %}
     {% include "timeline.njk" %}
 </section>

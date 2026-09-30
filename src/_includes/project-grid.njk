@@ -1,11 +1,11 @@
 <div class="card-grid">
     {% for p in items %}
-    <a class="card" href="/projects/{{ p.slug }}/">
+    <a class="card" href="{{ p.url }}">
         <div class="card-body">
-            <div class="card-title">{{ p.title }}</div>
-            <p class="card-desc">{{ p.description }}</p>
+            <div class="card-title">{{ p.data.title }}</div>
+            <p class="card-desc">{{ p.data.description }}</p>
             <div class="card-tags">
-                {% for t in p.tags %}<span class="card-tag">{{ t }}</span>{% endfor %}
+                {% for t in p.data.tech %}<span class="card-tag">{{ t }}</span>{% endfor %}
             </div>
         </div>
     </a>
