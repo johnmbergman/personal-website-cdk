@@ -9,13 +9,13 @@ permalink: /writing/
         <h2 class="section-title">Writing</h2>
     </div>
     <div class="writing-list">
-        {% for p in portfolio.posts %}
-        <a class="writing-item" href="/writing/{{ p.slug }}/">
+        {% for p in collections.posts %}
+        <a class="writing-item" href="{{ p.url }}">
             <div>
-                <div class="writing-title">{{ p.title }}</div>
-                <div class="writing-excerpt">{{ p.excerpt }}</div>
+                <div class="writing-title">{{ p.data.title }}</div>
+                <div class="writing-excerpt">{{ p.data.description }}</div>
             </div>
-            <div class="writing-date">{{ p.date }}</div>
+            <div class="writing-date">{{ p.date | monthYear }}</div>
         </a>
         {% endfor %}
     </div>

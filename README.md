@@ -5,17 +5,48 @@ and deployed to S3 + CloudFront by AWS CDK.
 
 ## Updating the site
 
-Almost all content lives in one file: [`src/_data/portfolio.json`](src/_data/portfolio.json).
-Edit it and the pages regenerate — projects, experience, education, skills and posts each
-render from their array, so adding an entry is enough to create the corresponding page.
+Each page's content lives in its own Nunjucks (`.njk`) file under `src/`.
 
-| Path | What it is |
+| To change… | Edit |
 | --- | --- |
-| `src/_data/portfolio.json` | All site content |
-| `src/*.njk` | One template per page |
-| `src/_includes/` | Shared layout and partials |
-| `src/css/styles.css` | Design tokens and component styles |
-| `src/assets/` | Images and favicon |
+| Home, About, Contact | `src/index.njk`, `src/about.njk`, `src/contact.njk` |
+| Experience and education | the `experience:` / `education:` lists in `src/experience.njk`'s front matter |
+| Skills | the `skills:` groups in `src/skills.njk`'s front matter |
+| A project | `src/projects/<slug>.njk` |
+| A post | `src/writing/<slug>.njk` |
+| Social links | `src/_includes/social.njk` |
+| Shared layout and styles | `src/_includes/`, `src/css/styles.css` |
+| Images and favicon | `src/assets/` |
+
+**Adding a project:** create `src/projects/<slug>.njk`. The filename becomes the URL
+(`/projects/<slug>/`), and `order` sets its position in the grid. `tech` drives the
+card tags and which skill pages list it. Anything below the front matter appears on
+the project page under the description.
+
+```njk
+---
+title: "My Project"
+description: "One-sentence summary shown on the card and the project page."
+tech: ["Java", "AWS"]
+order: 7
+---
+```
+
+**Adding a post:** create `src/writing/<slug>.njk`. Posts are listed newest first by
+`date`, which displays as month and year.
+
+```njk
+---
+title: "My Post"
+date: 2026-09-01
+description: "One-line excerpt shown in the writing list."
+---
+<p>First paragraph.</p>
+<p>Second paragraph.</p>
+```
+
+Skill filter pages (`/projects/skill-<slug>/`) are generated automatically for every
+skill that matches at least one project's `tech`.
 
 ## Commands
 

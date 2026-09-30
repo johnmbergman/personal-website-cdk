@@ -1,0 +1,14 @@
+---
+layout: base.njk
+---
+<section class="section">
+    <a class="back-link" href="/projects/"><i class="fa-solid fa-arrow-left"></i> Back to projects</a>
+    <div class="section-heading">
+        <h2 class="section-title">{{ title }}</h2>
+    </div>
+    <p class="case-lede">{{ description }}</p>
+    <div class="case-tags">
+        {% for t in tech %}<span class="badge">{{ t }}</span>{% endfor %}
+    </div>
+    {{ content | safe }}
+</section>

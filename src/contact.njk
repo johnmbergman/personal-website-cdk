@@ -10,15 +10,11 @@ permalink: /contact/
     </div>
     <p class="contact-lede">The fastest way to reach me is email. You can also connect with me on LinkedIn and GitHub.</p>
     <div class="contact-actions">
-        <a class="btn btn-primary" id="email-link" data-enc="{{ portfolio.profile.emailEncoded }}"><i class="fa-solid fa-envelope"></i> Send me an email</a>
-        <div class="social-row">
-            {% for s in portfolio.profile.social %}
-            <a class="social" href="{{ s.href }}" target="_blank" rel="noreferrer" aria-label="{{ s.label }}"><i class="{{ s.icon }}"></i></a>
-            {% endfor %}
-        </div>
+        <a class="btn btn-primary" id="email-link" data-enc="am9obm1iZXJnbWFuQGdtYWlsLmNvbQ=="><i class="fa-solid fa-envelope"></i> Send me an email</a>
+        {% include "social.njk" %}
     </div>
     <noscript>
-        <p class="contact-fallback">{{ portfolio.profile.emailHuman }}</p>
+        <p class="contact-fallback">johnmbergman [at] gmail [dot] com</p>
     </noscript>
 </section>
 

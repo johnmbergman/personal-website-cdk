@@ -2,6 +2,11 @@
 layout: base.njk
 title: Skills
 permalink: /skills/
+skills:
+  "Languages": ["Java", "Kotlin", "TypeScript", "Python", "Swift", "C#"]
+  "Cloud / Infra": ["AWS Lambda", "API Gateway", "CloudFront", "DynamoDB", "S3", "SQS/SNS", "Step Functions", "CDK"]
+  "Frameworks": ["Spring", "Guice", "Guava", "JUnit", "React", "SwiftUI"]
+  "AI / Agents": ["Multi-agent orchestration", "MCP", "LLM tooling & eval"]
 ---
 <section class="section">
     <div class="section-heading">
@@ -10,12 +15,12 @@ permalink: /skills/
     </div>
     <p class="skills-hint">Click a skill to see the projects that used it.</p>
     <div class="skills-grid">
-        {% for group, list in portfolio.skills %}
+        {% for group, list in skills %}
         <div>
             <div class="skill-group-title">{{ group }}</div>
             <div class="skill-list">
                 {% for s in list %}
-                {% set slug = s | skillSlug %}
+                {% set slug = s | skillSlug(collections.skillFilters) %}
                 {% if slug %}<a class="badge" href="/projects/skill-{{ slug }}/">{{ s }}</a>
                 {% else %}<span class="badge">{{ s }}</span>{% endif %}
                 {% endfor %}

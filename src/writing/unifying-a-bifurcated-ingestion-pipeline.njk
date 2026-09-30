@@ -1,0 +1,8 @@
+---
+title: "Unifying a bifurcated ingestion pipeline"
+date: 2026-03-01
+description: "Notes on moving a decade of tech debt onto one path without stopping the line."
+---
+<p>For years, content flowed into our catalog through two parallel ingestion paths — one legacy, one modern — each maintained by a different generation of the team. Every new feature meant building it twice, or worse, building it once and quietly letting the other path drift.</p>
+<p>The unification wasn’t a rewrite. It was a 12-engineer cross-org tiger team methodically routing traffic, title by title, onto the single path while the legacy system kept serving in parallel. We instrumented both paths so a regression on either was visible within minutes, not days.</p>
+<p>Nine months in, the unified path carries 100% of net-new partner content. The legacy path is still there, mid-decommission, but every title added since has only ever touched one codebase — and that’s the part that actually saves the years of tech debt from coming back.</p>
