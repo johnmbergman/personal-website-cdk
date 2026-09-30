@@ -3,44 +3,59 @@ layout: base.njk
 title: Experience
 permalink: /experience/
 experience:
-  - date: "June 2020 – Present"
+  - date: "June 2020 – June 2026"
     title: "Sr. Software Development Engineer"
     org: "Amazon · Prime Video"
-    description: "Tech lead for tools serving content creators, studios, and post houses — web portals, delivery/upload tooling, and partner-facing APIs."
+    description: "Technical lead for an 80 engineer Prime Video organization, setting architecture and technical direction across studio-facing content delivery, performance, and reporting systems."
     bullets:
-      - "Founded an API-first partner platform adopted org-wide across ~12 teams"
-      - "Authored a 3-year, multi-org API strategy; represented the company on the MovieLabs MDDF standards subcommittee"
-      - "Built context-aware AI dev agents adopted by 80+ engineers; added MCP support to the platform"
+      - "Launched Prime Video's studio API platform, establishing an API-first architecture pattern adopted across 12 engineering teams; grew the platform to 29 studio integrations handling 200+ TPS peak with >99.9% availability."
+      - "Authored a multi-year API (REST, GraphQL, MCP) strategy spanning three organizations, incorporating direct feedback from studios and fulfillment partners, securing senior-leadership investment and establishing API-first development as the organizational standard."
+      - "Led a cross-org effort to unify Prime Video's bifurcated content ingestion pipelines, authoring the architecture and coordinating 8 parallel workstreams across 3 organizations, eliminating 12 SDE-years of annual engineering effort across technical debt, operational support, and duplicate development. Migrated entire Prime Video content catalog of >8MM title parts to unified architecture."
+      - "Built context-aware AI agents incorporating Prime Video domain and microservice knowledge. Enabled Model Context Protocol (MCP) in the API platform and developed an MCP server exposing internal catalog and operational data."
   - date: "Apr 2018 – June 2020"
     title: "Software Development Engineer"
     org: "Amazon · Prime Video"
     description: "Built systems measuring content performance and calculating partner royalties and payments."
     bullets:
       - "Drove the cross-team launch of IMDb Freedive, vending entitlements at 1,300+ TPS"
-      - "Cut payment-workflow execution time 90%, saving $200k/yr"
-      - "Mentored 4 engineers through promotion and 2 interns to return offers"
+      - "Reduced end-to-end execution time of royalty workflow by 90% and reduced system cost by $200k annually by minimizing API calls and redundant storage, and tuning database throughput."
+      - "Implemented database sharding to eliminate a hot partition in a high-volume royalty transaction system, distributing writes across a configurable number of hash keys and enabling 100x throughput scaling."
+      - "Designed a balance tracking and payment platform providing real-time aggregated balances for 30K+ content vendors."
+      - "Mentored 4 engineers through the design and delivery of promotion projects, and 2 interns through successful internship programs."
   - date: "Apr 2016 – Apr 2018"
     title: "Software Development Engineer"
     org: "Amazon · Flex"
     description: "Backend engineer for distributed systems supporting the Amazon Flex apps and driver engagement."
     bullets:
-      - "Built a workflow-engine app automating 1MM+ monthly partner communications"
-      - "Developed a mobile SDK vending 10MM+ resource updates annually"
+      - "Built a full stack web application automating 1MM monthly bulk emails to Amazon Flex delivery partners, using workflow orchestration for reliable and idempotent delivery and supporting content templating and approval workflows."
+      - "Developed a mobile SDK integrated into the Amazon Flex iOS and Android applications."
+      - "Created in-app survey feature serving 1MM questions monthly and achieving an 85% response rate."
+      - "Implemented a push notification metadata caching layer, reducing dependency API calls by 50% and service latency by 15%."
   - date: "June 2011 – Jan 2016"
     title: "Software Engineer"
     org: "NuDatum Software"
     description: "Full-stack owner of an enterprise safety-auditing web application."
     bullets:
-      - "Deployed at 1,200+ company sites worldwide in 9 languages"
-      - "Cut onboarding from 2 days to 15 minutes via an O(n²) → O(n) migration rewrite"
+      - "Ported a Visual Basic for Applications (VBA) Microsoft Access application to a cloud-based enterprise SaaS platform using C#/.NET and MSSQL, serving 1,200+ company sites worldwide in 9 languages. Provided hands-on customer support and data migrations."
+      - "Automated customer data migrations with a configuration-driven migration tool, replacing per-customer script customization and O(n^2) lookups with hash-based O(n) processing; reduced average customer onboarding time from 2 days to 15 minutes."
 education:
-  - date: "2015"
-    title: "B.S., Computer Science (with honors)"
+  - date: "2014 – 2015"
+    title: "B.S., Computer Science"
     org: "Florida State University"
+    description: "3.78 GPA"
+    bullets:
+      - "Minored in Mathematics and Physical Sciences"
+      - "Dean's list Spring 2015"
+  - date: "2011 – 2013"
+    title: "A.A., Computer Science"
+    org: "Lone Star College"
+    description: "3.89 GPA. Phi Theta Kappa International Honors Society"
+    bullets:
+      - "Magna Cum Laude"
+      - "Dean's List Fall 2011, Spring 2012, Fall 2012, Spring 2013"
 ---
 <section class="section">
     <div class="section-heading">
-        <span class="eyebrow">03 / Experience</span>
         <h2 class="section-title"><i class="fa-solid fa-house-laptop"></i>Experience</h2>
     </div>
     {% set items = experience %}
@@ -48,7 +63,6 @@ education:
 </section>
 <section class="section">
     <div class="section-heading">
-        <span class="eyebrow">04 / Education</span>
         <h2 class="section-title"><i class="fa-solid fa-graduation-cap"></i>Education</h2>
     </div>
     {% set items = education %}
