@@ -5,6 +5,8 @@ import {DeploymentPipelineStack} from "../lib/deployment-pipeline-stack";
 describe('Deployment Pipeline', () => {
     const app = new App({
         context: {
+            domain: 'example.com',
+            subdomain: 'www',
             connectionArn: 'arn:aws:codestar-connections:us-east-1:account-id:connection/test-connection',
         },
     });
@@ -29,11 +31,11 @@ describe('Deployment Pipeline', () => {
             Stages: Match.arrayWith([
                 Match.objectLike({
                 Actions: Match.arrayWith([Match.objectLike({
-                    Configuration: {
-                        Owner: 'johnmbergman',
-                        Repo: 'personal-website-cdk',
-                        Branch: 'main'
-                    }
+                    Configuration: Match.objectLike({
+                        FullRepositoryId: 'johnmbergman/personal-website-cdk',
+                        BranchName: 'main',
+                        ConnectionArn: 'arn:aws:codestar-connections:us-east-1:account-id:connection/test-connection',
+                    })
                 })])
             })])
         });
